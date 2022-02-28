@@ -1,0 +1,14 @@
+class CreateListings < ActiveRecord::Migration[6.1]
+  def change
+    create_table :listings do |t|
+      t.string :title
+      t.string :address
+      t.text :description
+      t.integer :price_per_night
+      t.integer :listing_capacity
+      t.references :user, null: false, foreign_key: true
+
+      t.timestamps
+    end
+  end
+end
