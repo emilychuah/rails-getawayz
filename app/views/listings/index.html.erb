@@ -4,4 +4,6 @@
 
 <% @listings.each do |listing| %>
   <p><%= listing.title %></p>
+  <p>Address: <%= listing.address %></p>
+  <p>Price per night: AUD <%= listing.price_per_night %></p>
 <% end %>

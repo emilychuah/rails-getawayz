@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :listings, except: :destroy do
     resources :bookings, only: [:show, :new, :create]
   end
-  resources :users, only: [:show, :new, :create]
+  resources :users, only: [:show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

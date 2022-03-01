@@ -8,6 +8,7 @@ class ListingsController < ApplicationController
   end
 
   def show
+    authorize @listing
   end
 
   def new
@@ -27,10 +28,12 @@ class ListingsController < ApplicationController
   end
 
   def edit
+    authorize @listing
   end
 
   def update
     @listing.update(listing_params)
+    authorize @listing
 
     if @listing.update(listing_params)
       redirect_to listing_path(@listing)
@@ -47,6 +50,5 @@ class ListingsController < ApplicationController
 
   def find_listing
     @listing = Listing.find(params[:id])
-    authorize @listing
   end
 end
