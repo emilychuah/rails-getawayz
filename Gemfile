@@ -65,3 +65,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Devise gem
 gem 'devise'
+
+# Pundit gem
+gem 'pundit'
+
+# Validate timeliness gem
+gem 'validates_timeliness', '~> 6.0.0.beta2'

@@ -4,7 +4,9 @@ class Booking < ApplicationRecord
 
   validates :check_in_date_utc, :check_out_date_utc, :number_of_people, :total_price, presence: true
   validates :total_price, numericality: { only_integer: true }
-  validates :check_out_date_utc, comparison: { greater_than: :check_in_date_utc }
+  # validates :check_out_date_utc, comparison: { greater_than: :check_in_date_utc }
+  validates_date :check_in_date_utc, on_or_after: lambda { Date.current }
+  validates_date :check_out_date_utc, on_or_after: lambda { :check_in_date_utc }
   validate :check_in_date_cannot_be_in_the_past
 
   # Remember to test this!
