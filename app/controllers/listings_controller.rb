@@ -4,12 +4,14 @@ class ListingsController < ApplicationController
 
   def index
     @listings = policy_scope(Listing).order(created_at: :desc)
-    @listings = Listing.all
+    # @listings = Listing.all
 
     @markers = @listings.geocoded.map do |listing|
       {
         lat: listing.latitude,
-        lng: listing.longitude
+        lng: listing.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { listing: listing }),
+        image_url: helpers.asset_url("map-marker.png")
       }
     end
   end
