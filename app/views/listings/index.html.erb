@@ -1,9 +1,30 @@
-<% if policy(Listing).create? %>
-  <%= link_to "New listing", new_listing_path %>
-<% end %>
+<div class="banner mb-4 d-flex align-items-center justify-content-center">
+  <div class="text-center">
+    <h1>Book your next getaway</h1>
+  </div>
+</div>
 
-<% @listings.each do |listing| %>
-  <p><%= listing.title %></p>
-  <p>Address: <%= listing.address %></p>
-  <p>Price per night: AUD <%= listing.price_per_night %></p>
-<% end %>
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h3 class="mb-0">Available stays</h3>
+  </div>
+  <div class="row">
+    <% @listings.each do |listing| %>
+      <div class="col-12 col-sm-6 col-md-4 mb-3">
+        <%= link_to listing_path(listing), class:"text-decoration-none" do %>
+         <div class="card-trip">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= listing.title %></h2>
+                <p><%= listing.address %></p>
+              </div>
+              <h2 class="card-trip-pricing">A$<%= listing.price_per_night %></h2>
+              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+            </div>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
