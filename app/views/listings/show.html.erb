@@ -7,6 +7,6 @@
   <p>Price per night: AUD <%= @listing.price_per_night %></p>
   <p>Owner: <%= @listing.user.name %></p>
   <div class="btn btn-outline-secondary">
-    <%= link_to "Book now", :class => "btn" %>
+    <%= link_to "Book now", new_listing_booking_path(@listing.id), :class => "btn" %>
   </div>
 </div>
