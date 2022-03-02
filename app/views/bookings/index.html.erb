@@ -1,0 +1,13 @@
+<p>All your bookings</p>
+<div class="d-flex justify-content-between">
+<% @bookings.each do |booking| %>
+<div class="card-product">
+  <p>Your stay: <%= booking.listing.title %></p>
+<p>Number of people: <%= booking.number_of_people %></p>
+<p>Total price: AUD <%= booking.total_price %></p>
+<p>Check-in date: <%= booking.check_in_date_utc %></p>
+<p>Check-out date: <%= booking.check_out_date_utc %></p>
+<p>Booked by: <%= booking.user.name %></p>
+</div>
+<%end     %>
+</div>

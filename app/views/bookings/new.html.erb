@@ -1,1 +1,12 @@
-<h1>I'm in the new booking</h1>
+<h1>Booking Page</h1>
+<%= simple_form_for [@listing, @booking] do |f| %>
+  <%= f.input :check_in_date_utc %>
+  <%= f.input :check_out_date_utc %>
+  <%= f.input :number_of_people %>
+  <%# <%= f.input :user_id %> %>
+  <%= f.button :submit %>
+<% end %>
+
+ <p> <%= @days.to_i * @listing.price_per_night %></P>
+  <%# <%=  @current_user.id %>
+<%= @user %>
