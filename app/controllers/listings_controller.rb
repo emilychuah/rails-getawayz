@@ -3,8 +3,15 @@ class ListingsController < ApplicationController
   before_action :find_listing, only: [:show, :edit, :update]
 
   def index
-    # @listings = Listing.all
     @listings = policy_scope(Listing).order(created_at: :desc)
+    @listings = Listing.all
+
+    @markers = @listings.geocoded.map do |listing|
+      {
+        lat: listing.latitude,
+        lng: listing.longitude
+      }
+    end
   end
 
   def show

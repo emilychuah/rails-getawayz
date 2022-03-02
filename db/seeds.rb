@@ -9,10 +9,10 @@
 puts 'Creating users...'
 
 User.create!(name: "Marc", email: "marc@live.com", password: "password")
-User.create!(name: "Chris", email: "chris@hotmail.com", password: "password")
+User.create!(name: "Chris", email: "chris@live.com", password: "password")
 User.create!(name: "Emily", email: "emily@live.com", password: "password")
-User.create!(name: "Sam", email: "sam@hotmail.com", password: "password")
-User.create!(name: "Theresa", email: "theresa@hotmail.com", password: "password")
+User.create!(name: "Sam", email: "sam@live.com", password: "password")
+User.create!(name: "Theresa", email: "theresa@live.com", password: "password")
 
 puts 'Creating listings...'
 

@@ -73,7 +73,7 @@ gem 'pundit'
 gem 'validates_timeliness', '~> 6.0.0.beta2'
 
 # Transform address to GPS coordinates
-gem "geocoder"
+gem 'geocoder'
 
 # Security
 gem 'dotenv-rails', groups: [:development, :test]
