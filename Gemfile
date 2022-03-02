@@ -63,14 +63,17 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# Devise gem
+# Authentication
 gem 'devise'
 
-# Pundit gem
+# Authorization
 gem 'pundit'
 
 # Validate timeliness gem
 gem 'validates_timeliness', '~> 6.0.0.beta2'
 
-# Faker gem
-gem 'faker'
+# Transform address to GPS coordinates
+gem "geocoder"
+
+# Security
+gem 'dotenv-rails', groups: [:development, :test]
