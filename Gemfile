@@ -71,3 +71,6 @@ gem 'pundit'
 
 # Validate timeliness gem
 gem 'validates_timeliness', '~> 6.0.0.beta2'
+
+# Faker gem
+gem 'faker'
