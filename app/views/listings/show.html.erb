@@ -1,7 +1,12 @@
-<h1>A specific listing</h1>
-<p><%= @listing.title %></p>
-<p>Address: <%= @listing.address %></p>
-<p>Description: <%= @listing.description %></p>
-<p>Capacity: <%= @listing.listing_capacity %> guests</p>
-<p>Price per night: AUD <%= @listing.price_per_night %></p>
-<p>Owner: <%= @listing.user.name %></p>
+<h1 align="center"><%= @listing.title %></h1>
+
+<div align="center">
+  <p>Address: <%= @listing.address %></p>
+  <p>Description: <%= @listing.description %></p>
+  <p>Capacity: <%= @listing.listing_capacity %> guests</p>
+  <p>Price per night: AUD <%= @listing.price_per_night %></p>
+  <p>Owner: <%= @listing.user.name %></p>
+  <div class="btn btn-outline-secondary">
+    <%= link_to "Book now", :class => "btn" %>
+  </div>
+</div>
