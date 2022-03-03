@@ -41,3 +41,30 @@
 #booking-index-go-back{
   width: 100px;
 }
+
+.btn-outline-secondary {
+  color: #5DB5FD;
+  border-color: #5DB5FD;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #5DB5FD;
+  color: #FFFFFE;
+  border-color: #5DB5FD;
+}
+
+p {
+  color: #5f6c7b;
+}
+
+h1 {
+  color: #46525D;
+}
+
+
+.wrapper {
+  min-height: calc(100vh - 50px);
+}
+footer {
+  height: 50px;
+}

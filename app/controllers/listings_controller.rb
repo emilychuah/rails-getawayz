@@ -2,6 +2,7 @@ class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :find_listing, only: [:show, :edit, :update]
 
+
   def index
     @listings = policy_scope(Listing).order(created_at: :desc)
     # @listings = Listing.all
@@ -51,6 +52,8 @@ class ListingsController < ApplicationController
       render :edit
     end
   end
+
+
 
   private
 
