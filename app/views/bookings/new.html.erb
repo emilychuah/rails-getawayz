@@ -1,14 +1,19 @@
-<body class="m-2">
-<h1>Booking Page</h1>
-<div>
-<%= simple_form_for [@listing, @booking] do |f| %>
-  <%= f.input :check_in_date_utc %>
-  <%= f.input :check_out_date_utc %>
-  <%= f.input :number_of_people %>
-  <%= f.button :submit, class: "btn btn-outline-secondary" %>
-  <%= link_to "Go Back", listings_path(@listing), class: "btn btn-outline-secondary mx-2" %>
-<% end %>
-<div>
+<div id="newform">
+<div class="mt-5">
+  <h1 class="d-flex justify-content-center">Booking Page</h1>
+</div>
+
+<div class="container mb-5">
+  <%= simple_form_for [@listing, @booking] do |f| %>
+    <div><%= f.input :check_in_date_utc %></div>
+    <div><%= f.input :check_out_date_utc %></div>
+    <div> <%= f.input :number_of_people %></div>
+    <div class="d-flex justify-content-center">
+      <%= f.button :submit, class: "btn btn-outline-secondary" %>
+      <%= link_to "Go Back", listings_path(@listing), class: "btn btn-outline-secondary mx-2" %>
+    </div>
+  <% end %>
+</div>
 
 <%= @user %>
-<body>
+</div>
