@@ -1,13 +1,21 @@
-<p>All your bookings</p>
-<div class="d-flex justify-content-between">
+<h1 class="text-center py-2">All your bookings</h1>
+<div class="d-flex justify-content-start flex-wrap" id="booking-index">
 <% @bookings.each do |booking| %>
-<div class="card-product">
-  <p>Your stay: <%= booking.listing.title %></p>
-  <p>Number of people: <%= booking.number_of_people %></p>
-  <p>Total price: AUD <%= booking.total_price %></p>
-  <p>Check-in date: <%= booking.check_in_date_utc %></p>
-  <p>Check-out date: <%= booking.check_out_date_utc %></p>
-  <p>Booked by: <%= booking.user.name %></p>
+<div class="card-product  m-4 ">
+  <div class="card" style="width: 18rem;  ">
+  <div class="card-body">
+    <h3 class="card-title">Your stay: <%= booking.listing.title %></h5>
+    <p class="card-text">Number of people: <%= booking.number_of_people %></p>
+    <p>Total price: AUD <%= booking.total_price %></p>
+    <p>Check-in date: <%= booking.check_in_date_utc %></p>
+    <p>Check-out date: <%= booking.check_out_date_utc %></p>
+    <p>Booked by: <%= booking.user.name %></p>
+    <button type="button" class="btn btn-outline-secondary"><%= link_to 'visit this booking', booking_path(booking),class: 'link' %></button>
+  </div>
+</div>
 </div>
 <% end %>
+</div>
+<div class="m-3 d-flex justify-content-center" >
+<%= link_to "Go Back", listings_path(@bookings), class: "btn btn-outline-secondary mx-2 btn-lg " %>
 </div>

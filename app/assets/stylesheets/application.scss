@@ -13,3 +13,31 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+.link {
+  text-decoration: none;
+  color: #6c757d;
+  display: inline-block;
+   position: relative;
+   z-index: 1;
+   padding: 0.5em;
+   margin: -0.5em;
+}
+
+.link:hover {
+  color: #cad5df;
+  display: inline-block;
+   position: relative;
+   z-index: 1;
+   padding: 0.5em;
+   margin: -0.5em;
+}
+
+#booking-index {
+  padding-left: 150px;
+}
+
+#booking-index-go-back{
+  width: 100px;
+}
