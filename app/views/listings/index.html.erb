@@ -1,14 +1,17 @@
-<div class="banner mb-4 d-flex align-items-center justify-content-center">
-  <div class="text-center">
-    <h1>Book your next getaway</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.1)), url(https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);">
+  <div class="container d-flex justify-content-center">
+    <h1>Book your Next Getaway</h1>
+  </div>
+  <div class="container d-flex justify-content-center">
+    <p>and indulge yourself now</p>
   </div>
 </div>
 
-<div class="container py-5">
-  <div class="d-flex align-items-center justify-content-between mb-3">
-    <h3 class="mb-0">Available stays</h3>
+<div class="section p-5">
+  <div class="d-flex justify-content-center mb-3">
+    <h3 class="pb-2">Available stays</h3>
   </div>
-  <div class="row">
+  <div class="row px-5 mx-5">
     <% @listings.each do |listing| %>
       <div class="col-12 col-sm-6 col-md-4 mb-3">
         <%= link_to listing_path(listing), class:"text-decoration-none" do %>
