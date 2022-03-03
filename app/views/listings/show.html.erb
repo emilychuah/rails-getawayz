@@ -1,5 +1,9 @@
 <h1 align="center"><%= @listing.title %></h1>
 
+<% @listing.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
 <div align="center">
   <p>Address: <%= @listing.address %></p>
   <p>Description: <%= @listing.description %></p>
