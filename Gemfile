@@ -77,3 +77,6 @@ gem 'geocoder'
 
 # Security
 gem 'dotenv-rails', groups: [:development, :test]
+
+# Upload photos
+gem 'cloudinary', '~> 1.16.0'
