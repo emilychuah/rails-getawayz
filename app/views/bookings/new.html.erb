@@ -1,14 +1,20 @@
-<body class="m-2">
-<h1>Booking Page</h1>
-<div>
-<%= simple_form_for [@listing, @booking] do |f| %>
-  <%= f.input :check_in_date_utc %>
-  <%= f.input :check_out_date_utc %>
-  <%= f.input :number_of_people %>
-  <%= f.button :submit, class: "btn btn-outline-secondary" %>
-  <%= link_to "Go Back", listings_path(@listing), class: "btn btn-outline-secondary mx-2" %>
-<% end %>
-<div>
+<div id="newform">
+<div class="pt-5">
+  <h1 class="d-flex justify-content-center">Booking Page</h1>
+</div>
+
+<div class="container pb-5">
+  <%= simple_form_for [@listing, @booking] do |f| %>
+    <div><%= f.input :check_in_date_utc, label: "Check-in date" %></div>
+    <div><%= f.input :check_out_date_utc, label: "Check-out date" %></div>
+    <div> <%= f.input :number_of_people %></div>
+    <%# <div class="price d-flex justify-content-center"><p>Total price: AUD <%= @booking.total_price %>
+    <div class="d-flex justify-content-center">
+      <%= f.button :submit, class: "btn btn-primary" %>
+      <%= link_to "Go Back", listings_path(@listing), class: "btn btn-link text-decoration-none" %>
+    </div>
+  <% end %>
+</div>
 
 <%= @user %>
-<body>
+</div>
