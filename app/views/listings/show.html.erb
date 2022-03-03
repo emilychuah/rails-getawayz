@@ -1,12 +1,28 @@
-<h1 align="center"><%= @listing.title %></h1>
+<div class="card-trip">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-product">
+    <div>
+      <h2><%= @listing.title%></h2>
+      <p><strong>Address:</strong> <%= @listing.address %></p>
+      <p><strong>Description:</strong> <%= @listing.description %></p>
+      <p><strong>Capacity:</strong> <%= @listing.listing_capacity %> guests</p>
+      <p><strong>Price per night:</strong> AUD $ <%= @listing.price_per_night %></p>
+      <p><strong>Owner:</strong> <%= @listing.user.name %></p>
 
-<div align="center">
-  <p>Address: <%= @listing.address %></p>
-  <p>Description: <%= @listing.description %></p>
-  <p>Capacity: <%= @listing.listing_capacity %> guests</p>
-  <p>Price per night: AUD <%= @listing.price_per_night %></p>
-  <p>Owner: <%= @listing.user.name %></p>
-  <div class="btn btn-outline-secondary">
-    <%= link_to "Book now", new_listing_booking_path(@listing.id), :class => "btn" %>
+    </div>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
   </div>
+</div>
+<div class="info-display">
+
+
+<div class="layout">
+  <div class="info">
+
+
+
+
+  </div>
+  <div class = "d-flex justify-content-center"><%= link_to 'Book Now', new_listing_booking_path(@listing.id), class: 'btn btn-outline-secondary' %>
+</div>
 </div>

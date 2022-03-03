@@ -5,3 +5,5 @@
 <p>Check-in date: <%= @booking.check_in_date_utc %></p>
 <p>Check-out date: <%= @booking.check_out_date_utc %></p>
 <p>Booked by: <%= @booking.user.name %></p>
+
+<button type="button" class="btn btn-outline-secondary"><%= link_to 'visit this booking', listing_path(booking),class: 'link' %></button>
