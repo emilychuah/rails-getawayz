@@ -1,3 +1,4 @@
+
 <div class="card-trip">
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
   <div class="card-product">
@@ -13,16 +14,8 @@
     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
   </div>
 </div>
-<div class="info-display">
+ <%= link_to 'Book Now', new_listing_booking_path(@listing.id), class: 'btn btn-outline-secondary' %>
+ <%= link_to "Go Back", listings_path(@listing), class: "btn btn-outline-secondary mx-2" %>
+  
 
 
-<div class="layout">
-  <div class="info">
-
-
-
-
-  </div>
-  <div class = "d-flex justify-content-center"><%= link_to 'Book Now', new_listing_booking_path(@listing.id), class: 'btn btn-outline-secondary' %>
-</div>
-</div>

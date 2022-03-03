@@ -1,10 +1,14 @@
+<body class="m-2">
 <h1>Booking Page</h1>
+<div>
 <%= simple_form_for [@listing, @booking] do |f| %>
   <%= f.input :check_in_date_utc %>
   <%= f.input :check_out_date_utc %>
   <%= f.input :number_of_people %>
-  <%= f.button :submit %>
+  <%= f.button :submit, class: "btn btn-outline-secondary" %>
+  <%= link_to "Go Back", listings_path(@listing), class: "btn btn-outline-secondary mx-2" %>
 <% end %>
+<div>
 
- <p> AUD <%= @days.to_i * @listing.price_per_night %></P>
 <%= @user %>
+<body>
