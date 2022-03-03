@@ -1,16 +1,18 @@
+<div class="description d-flex flex-row">
+  <div class="p-5 d-flex flex-column justify-content-center">
+    <h1 class="pb-4"><%= @listing.title %></h1>
+    <p><strong>Address:</strong> <%= @listing.address %></p>
+    <p><strong>Description:</strong> <%= @listing.description %></p>
+    <p><strong>Capacity:</strong> <%= @listing.listing_capacity %> guests</p>
+    <p><strong>Owner:</strong> <%= @listing.user.name %></p>
+    <p><strong>Price per night:</strong> AUD <%= @listing.price_per_night %></p>
+    <div class="p-2">
+      <%= link_to 'Book Now', new_listing_booking_path(@listing.id), class: 'btn btn-outline-secondary' %>
+      <%= link_to "Go Back", listings_path(@listing), class: 'btn btn-link text-decoration-none' %>
+    </div>
 
-<h1 align="center"><%= @listing.title %></h1>
-
-<% @listing.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-
-<div align="center">
-  <p>Address: <%= @listing.address %></p>
-  <p>Description: <%= @listing.description %></p>
-  <p>Capacity: <%= @listing.listing_capacity %> guests</p>
-  <p>Price per night: AUD <%= @listing.price_per_night %></p>
-  <p>Owner: <%= @listing.user.name %></p>
-  <%= link_to 'Book Now', new_listing_booking_path(@listing.id), class: 'btn btn-outline-secondary' %>
-  <%= link_to "Go Back", listings_path(@listing), class: "btn btn-outline-secondary mx-2" %>
+  </div>
+  <div>
+    <img src="https://a0.muscache.com/im/pictures/8da31ffa-daa8-4e7d-aa9b-1d81ef99369d.jpg?im_w=720" class="img" alt="barn">
+  </div>
 </div>
