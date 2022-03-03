@@ -13,3 +13,58 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+.link {
+  text-decoration: none;
+  color: #6c757d;
+  display: inline-block;
+   position: relative;
+   z-index: 1;
+   padding: 0.5em;
+   margin: -0.5em;
+}
+
+.link:hover {
+  color: #cad5df;
+  display: inline-block;
+   position: relative;
+   z-index: 1;
+   padding: 0.5em;
+   margin: -0.5em;
+}
+
+#booking-index {
+  padding-left: 150px;
+}
+
+#booking-index-go-back{
+  width: 100px;
+}
+
+.btn-outline-secondary {
+  color: #5DB5FD;
+  border-color: #5DB5FD;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #5DB5FD;
+  color: #FFFFFE;
+  border-color: #5DB5FD;
+}
+
+p {
+  color: #5f6c7b;
+}
+
+h1 {
+  color: #46525D;
+}
+
+
+.wrapper {
+  min-height: calc(100vh - 50px);
+}
+footer {
+  height: 50px;
+}

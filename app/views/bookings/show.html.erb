@@ -5,3 +5,5 @@
 <p>Check-in date: <%= @booking.check_in_date_utc %></p>
 <p>Check-out date: <%= @booking.check_out_date_utc %></p>
 <p>Booked by: <%= @booking.user.name %></p>
+<%= link_to "Home Page", listings_path(@booking), class: "btn btn-outline-secondary mx-2" %>
+<%= link_to "Bookings Page", bookings_path(@booking), class: "btn btn-outline-secondary mx-2 btn" %>

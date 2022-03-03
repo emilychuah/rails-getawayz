@@ -70,3 +70,21 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: white;
 }
+
+.description {
+  background-color: white;
+  border-radius: 5px;
+  width: 100%;
+  margin: 0;
+}
+
+.img {
+  width: 800px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.goback {
+  margin-right: 100px;
+  margin-bottom: 10px;
+}
