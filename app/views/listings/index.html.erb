@@ -13,7 +13,9 @@
       <div class="col-12 col-sm-6 col-md-4 mb-3">
         <%= link_to listing_path(listing), class:"text-decoration-none" do %>
          <div class="card-trip">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <% listing.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+          <% end %>
             <div class="card-trip-infos">
               <div>
                 <h2><%= listing.title %></h2>
