@@ -8,10 +8,14 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-
   height: 60px;
+
 }
 
 li {
   list-style-type: none;
+}
+
+.avatar:hover {
+  box-shadow: 10px black;
 }
