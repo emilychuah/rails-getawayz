@@ -1,9 +1,19 @@
-<h3>You've successfully placed a booking. Here are the details:</h3>
-<p>Your stay: <%= @booking.listing.title %></p>
-<p>Number of people: <%= @booking.number_of_people %></p>
-<p>Total price: AUD <%= @booking.total_price %></p>
-<p>Check-in date: <%= @booking.check_in_date_utc %></p>
-<p>Check-out date: <%= @booking.check_out_date_utc %></p>
-<p>Booked by: <%= @booking.user.name %></p>
-<%= link_to "Home Page", listings_path(@booking), class: "btn btn-outline-secondary mx-2" %>
-<%= link_to "Bookings Page", bookings_path(@booking), class: "btn btn-outline-secondary mx-2 btn" %>
+<div class="p-5" id="newform">
+  <div class="m-2  d-flex flex-column">
+    <h3 class="d-flex justify-content-center">You've successfully placed a booking </h3>
+    <h4 class="d-flex justify-content-center">Here are the details:</h4>
+  </div>
+  <div class="m-2">
+    <div class="d-flex justify-content-center"><p>Your stay: <%= @booking.listing.title %></p></div>
+    <div class="d-flex justify-content-center"><p>Number of people: <%= @booking.number_of_people %></p></div>
+    <div class="d-flex justify-content-center"><p>Total price: AUD <%= @booking.total_price %></p></div>
+    <div class="d-flex justify-content-center"><p>Check-in date: <%= @booking.check_in_date_utc %></p></div>
+    <div class="d-flex justify-content-center"><p>Check-out date: <%= @booking.check_out_date_utc %></p></div>
+    <div class="d-flex justify-content-center"><p>Booked by: <%= @booking.user.name %></p></div>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <%= link_to "Home Page", listings_path(@booking), class: "btn btn-outline-secondary mx-2" %>
+    <%= link_to "Bookings Page", bookings_path(@booking), class: "btn btn-outline-secondary mx-2 btn" %>
+  </div>
+</div>
