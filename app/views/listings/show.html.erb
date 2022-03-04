@@ -14,6 +14,7 @@
     <p><strong>Price per night:</strong> AUD <%= @listing.price_per_night %></p>
     <div class="p-2">
       <%= link_to 'Book Now', new_listing_booking_path(@listing.id), class: 'btn btn-primary' %>
+      <%= link_to 'All User Listings', user_path(@listing.user_id), class: 'btn btn-primary' %>
       <%= link_to "Go Back", listings_path(@listing), class: 'btn btn-link text-decoration-none' %>
     </div>
 
