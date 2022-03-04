@@ -1,28 +1,23 @@
+<script>
+  window.onload = document.getElementById("footer").removeAttribute("position");
+</script>
+
 <%# SLIDER SCRIPTS %>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<div class="description d-flex flex-row justify-content-between">
-  <div class="p-5 d-flex flex-column justify-content-center">
-    <h1 class="pb-4"><%= @listing.title %></h1>
-    <p><strong>Address:</strong> <%= @listing.address %></p>
-    <p><strong>Description:</strong> <%= @listing.description %></p>
-    <p><strong>Capacity:</strong> <%= @listing.listing_capacity %> guests</p>
-    <p><strong>Owner:</strong> <%= @listing.user.name %></p>
-    <p><strong>Price per night:</strong> AUD <%= @listing.price_per_night %></p>
-    <div class="p-2">
-      <%= link_to 'Book Now', new_listing_booking_path(@listing.id), class: 'btn btn-primary' %>
-      <%= link_to 'All User Listings', user_path(@listing.user_id), class: 'btn btn-primary' %>
-      <%= link_to "Go Back", listings_path(@listing), class: 'btn btn-link text-decoration-none' %>
-    </div>
-
+<div class="section p-5">
+  <div class="d-flex justify-content-center mb-3">
+    <h3 class="pb-2"><%= @user.name %> listings</h3>
   </div>
-  <%# <div>
-    <img src="https://a0.muscache.com/im/pictures/8da31ffa-daa8-4e7d-aa9b-1d81ef99369d.jpg?im_w=720" class="img" alt="barn">
-  </div> %>
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <div class="row px-5 mx-5">
+    <% @user.listings.each do |user| %>
+      <div class="col-12 col-sm-6 col-md-4 mb-3">
+        <%= link_to listing_path(user), class:"text-decoration-none" do %>
+         <div class="card-trip">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
               <ol class="carousel-indicators">
                   <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                   <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -30,13 +25,13 @@
               </ol>
               <div class="carousel-inner">
                   <div class="carousel-item active">
-                      <img class="d-block w-500" src="https://images.unsplash.com/photo-1551524164-687a55dd1126?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1025&q=80" width= "800" height= "700"  alt="First slide">
+                      <img class="d-block w-100" src="https://images.unsplash.com/photo-1551524164-687a55dd1126?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1025&q=80" width="400" height="210" alt="First slide">
                   </div>
                   <div class="carousel-item">
-                      <img class="d-block w-500" src="https://images.unsplash.com/photo-1475503572774-15a45e5d60b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" width= "800" height= "700" alt="Second slide">
+                      <img class="d-block w-100" src="https://images.unsplash.com/photo-1475503572774-15a45e5d60b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" width="400" height="210" alt="Second slide">
                   </div>
                   <div class="carousel-item">
-                      <img class="d-block w-500" src="https://images.unsplash.com/photo-1606586243150-88fde4c6f193?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"  width= "800" height= "700" alt="Third slide">
+                      <img class="d-block w-100" src="https://images.unsplash.com/photo-1606586243150-88fde4c6f193?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" width="100" height="210" alt="Third slide">
                   </div>
               </div>
               <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -48,4 +43,21 @@
                   <span class="sr-only">Next</span>
               </a>
           </div>
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= user.title %></h2>
+                <p><%= user.address %></p>
+              </div>
+              <h2 class="card-trip-pricing">AUD $<%= user.price_per_night %></h2>
+              <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
+            </div>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div >
+  <div class="d-flex justify-content-center">
+  <%= link_to "Go Back", :back, class: 'btn btn-primary mx-2' %>
+  <%= link_to "Home Page", listings_path(@user), class: 'btn btn-primary mx-2'  %>
+  </div>
 </div>
