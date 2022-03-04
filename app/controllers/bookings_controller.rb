@@ -31,7 +31,7 @@ class BookingsController < ApplicationController
     @booking.total_price = @days.to_i * @listing.price_per_night
     authorize @booking
 
-    if @booking.save!
+    if @booking.save
       redirect_to booking_path(@booking)
     else
       render :new
