@@ -16,12 +16,16 @@
 
 .link {
   text-decoration: none;
-  color: #6c757d;
+  color: #686666;
   display: inline-block;
    position: relative;
    z-index: 1;
    padding: 0.5em;
    margin: -0.5em;
+   transition: 0.3s;
+}
+.link:hover {
+  color: white
 }
 
 .link:hover {
