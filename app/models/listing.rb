@@ -3,7 +3,7 @@ class Listing < ApplicationRecord
   has_many :bookings
   has_many_attached :photos
 
-  validates :title, :address, :price_per_night, :description, :listing_capacity, :photos, presence: true
+  validates :title, :address, :price_per_night, :description, :listing_capacity, presence: true
   validates :price_per_night, numericality: { only_integer: true }
 
   geocoded_by :address
