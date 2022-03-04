@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
-  before_action :find_listing, only: [:show, :edit, :update]
+  before_action :find_listing, only: [:show, :edit, :update, :destroy]
 
 
   def index
@@ -53,7 +53,11 @@ class ListingsController < ApplicationController
     end
   end
 
+  def destroy
+    @listing.destroy
 
+    redirect_to listings_path
+  end
 
   private
 
