@@ -10,9 +10,17 @@
     <div> <%= f.input :number_of_people %></div>
     <%# <div class="price d-flex justify-content-center"><p>Total price: AUD <%= @booking.total_price %>
     <div class="d-flex justify-content-center">
-      <%= f.button :submit, class: "btn btn-primary" %>
+      <%= f.button :submit, class: "btn btn-primary", onclick:"myFunction()" %>
       <%= link_to "Go Back", listings_path(@listing), class: "btn btn-link text-decoration-none" %>
     </div>
+
+    <script>
+function myFunction() {
+  if <% %>
+  alert("Please select a date from today's date");
+}
+    </script>
+
   <% end %>
 </div>
 
