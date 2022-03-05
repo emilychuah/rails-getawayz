@@ -1,12 +1,9 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: [:show]
+  before_action :find_user, only: [:listings]
 
-  def index
-    @users = policy_scope(User).order(created_at: :desc)
-  end
-
-  def show
-    authorize @user
+  def listings
+    @listings = @user.listings
+    authorize @listings
   end
 
   private

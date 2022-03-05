@@ -1,7 +1,6 @@
 class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
-  before_action :find_listing, only: [:show, :edit, :update, :destroy]
-
+  before_action :find_listing, only: [:show, :edit, :update, :owner]
 
   def index
     @listings = policy_scope(Listing).order(created_at: :desc)
@@ -53,10 +52,9 @@ class ListingsController < ApplicationController
     end
   end
 
-  def destroy
-    @listing.destroy
-
-    redirect_to listings_path
+  def owner
+    @owner = @listing.user
+    authorize @owner
   end
 
   private

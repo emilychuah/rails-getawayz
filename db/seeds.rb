@@ -6,15 +6,46 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts 'Creating users...'
+require "open-uri"
 
-User.create!(name: "Marc", email: "marc@live.com", password: "password")
-User.create!(name: "Chris", email: "chris@live.com", password: "password")
-User.create!(name: "Emily", email: "emily@live.com", password: "password")
-User.create!(name: "Sam", email: "sam@live.com", password: "password")
-User.create!(name: "Theresa", email: "theresa@live.com", password: "password")
+puts "Creating users..."
 
-# puts 'Creating listings...'
+marc = User.create!(
+  name: "Marc",
+  email: "marc@live.com",
+  password: "password"
+)
+marc.photos.attach(io: File.open('app/assets/images/marc.jpg'), filename: 'marc.jpg', content_type: 'image/jpg')
+
+chris = User.create!(
+  name: "Chris",
+  email: "chris@live.com",
+  password: "password"
+)
+chris.photos.attach(io: File.open('app/assets/images/chris.png'), filename: 'chris.png', content_type: 'image/png')
+
+emily = User.create!(
+  name: "Emily",
+  email: "emily@live.com",
+  password: "password"
+)
+emily.photos.attach(io: File.open('app/assets/images/emily.png'), filename: 'emily.png', content_type: 'image/png')
+
+sam = User.create!(
+  name: "Sam",
+  email: "sam@live.com",
+  password: "password"
+)
+sam.photos.attach(io: File.open('app/assets/images/sam.png'), filename: 'sam.png', content_type: 'image/png')
+
+theresa = User.create!(
+  name: "Theresa",
+  email: "theresa@live.com",
+  password: "password"
+)
+theresa.photos.attach(io: File.open('app/assets/images/theresa.png'), filename: 'theresa.png', content_type: 'image/png')
+
+# puts "Creating listings..."
 
 # Listing.create!(
 #   title: "1-bedroom CBD Modern Designer Suite in Melbourne",
@@ -77,9 +108,25 @@ User.create!(name: "Theresa", email: "theresa@live.com", password: "password")
 #   picture_url: "https://a0.muscache.com/im/pictures/miso/Hosting-50118244/original/1161e7c3-9e20-4771-ae1c-0410f88c3a39.jpeg?im_w=1200"
 # )
 
-puts 'Creating bookings...'
+# puts "Creating bookings..."
 
-Booking.create!(number_of_people: 4, is_active: true, total_price: 2400, check_in_date_utc: "2022-03-21", check_out_date_utc: "2022-03-23", user_id: 3, listing_id: 2)
-Booking.create!(number_of_people: 2, is_active: true, total_price: 400, check_in_date_utc: "2022-03-28", check_out_date_utc: "2022-03-30", user_id: 4, listing_id: 3)
+# Booking.create!(
+#   number_of_people: 4,
+#   is_active: true,
+#   total_price: 2400,
+#   check_in_date_utc: "2022-03-21",
+#   check_out_date_utc: "2022-03-23",
+#   user_id: 3,
+#   listing_id: 2
+# )
+# Booking.create!(
+#   number_of_people: 2,
+#   is_active: true,
+#   total_price: 400,
+#   check_in_date_utc: "2022-03-28",
+#   check_out_date_utc: "2022-03-30",
+#   user_id: 4,
+#   listing_id: 3
+# )
 
-puts 'Finished!'
+puts "Finished!"
