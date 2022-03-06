@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[index show]
+  skip_before_action :authenticate_user!, only: %i[index show owner]
   before_action :find_listing, only: [:show, :edit, :update, :owner]
 
   def index
