@@ -13,40 +13,35 @@ marc = User.create!(
   email: "marc@live.com",
   password: "password"
 )
-file_path = Rails.root.join("app", "assets", "images", "marc.jpg")
-marc.photos.attach(io: File.open(file_path), filename: 'marc.jpg', content_type: 'image/jpg')
+marc.photos.attach(io: File.open('app/assets/images/marc.jpg'), filename: 'marc.jpg', content_type: 'image/jpg')
 
 chris = User.create!(
   name: "Chris",
   email: "chris@live.com",
   password: "password"
 )
-file_path = Rails.root.join("app", "assets", "images", "chris.png")
-chris.photos.attach(io: File.open(file_path), filename: 'chris.png', content_type: 'image/png')
+chris.photos.attach(io: File.open('app/assets/images/chris.png'), filename: 'chris.png', content_type: 'image/png')
 
 emily = User.create!(
   name: "Emily",
   email: "emily@live.com",
   password: "password"
 )
-file_path = Rails.root.join("app", "assets", "images", "emily.png")
-emily.photos.attach(io: File.open(file_path), filename: 'emily.png', content_type: 'image/png')
+emily.photos.attach(io: File.open('app/assets/images/emily.png'), filename: 'emily.png', content_type: 'image/png')
 
 sam = User.create!(
   name: "Sam",
   email: "sam@live.com",
   password: "password"
 )
-file_path = Rails.root.join("app", "assets", "images", "sam.png")
-sam.photos.attach(io: File.open(file_path), filename: 'sam.png', content_type: 'image/png')
+sam.photos.attach(io: File.open('app/assets/images/sam.png'), filename: 'sam.png', content_type: 'image/png')
 
 theresa = User.create!(
   name: "Theresa",
   email: "theresa@live.com",
   password: "password"
 )
-file_path = Rails.root.join("app", "assets", "images", "theresa.png")
-theresa.photos.attach(io: File.open(file_path), filename: 'theresa.png', content_type: 'image/png')
+theresa.photos.attach(io: File.open('app/assets/images/theresa.png'), filename: 'theresa.png', content_type: 'image/png')
 
 # puts "Creating listings..."
 
