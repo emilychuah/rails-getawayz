@@ -7,13 +7,13 @@
 <div class="row mr-0">
   <div class="col-xs-5 col-lg-5 d-flex justify-content-center align-items-center px-0">
     <div class="p-5 d-flex flex-column justify-content-center">
-      <h1 class="pb-4"><%= @listing.title %></h1>
+      <h3 class="pb-4"><%= @listing.title %></h3>
       <p><strong>Address:</strong> <%= @listing.address %></p>
       <p><strong>Description:</strong> <%= @listing.description %></p>
       <p><strong>Capacity:</strong> <%= @listing.listing_capacity %> guests</p>
       <p><strong>Owner:</strong> <%= @listing.user.name %></p>
       <p><strong>Price per night:</strong> AUD <%= @listing.price_per_night %></p>
-      <div>
+      <div class="mt-2">
         <%= link_to 'Book Now', new_listing_booking_path(@listing.id), class: 'btn btn-primary mb-2' %>
         <%= link_to owner_listing_path(@listing), class: 'btn btn-primary mb-2' do %>
           View listings by <%= @listing.user.name %>
