@@ -6,8 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require "open-uri"
-
 puts "Creating users..."
 
 marc = User.create!(
@@ -15,35 +13,40 @@ marc = User.create!(
   email: "marc@live.com",
   password: "password"
 )
-marc.photos.attach(io: File.open('app/assets/images/marc.jpg'), filename: 'marc.jpg', content_type: 'image/jpg')
+file = File.open('app/assets/images/marc.jpg')
+marc.photos.attach(io: file, filename: 'marc.jpg', content_type: 'image/jpg')
 
 chris = User.create!(
   name: "Chris",
   email: "chris@live.com",
   password: "password"
 )
-chris.photos.attach(io: File.open('app/assets/images/chris.png'), filename: 'chris.png', content_type: 'image/png')
+file = File.open('app/assets/images/chris.png')
+chris.photos.attach(io: file, filename: 'chris.png', content_type: 'image/png')
 
 emily = User.create!(
   name: "Emily",
   email: "emily@live.com",
   password: "password"
 )
-emily.photos.attach(io: File.open('app/assets/images/emily.png'), filename: 'emily.png', content_type: 'image/png')
+file = File.open('app/assets/images/emily.png')
+emily.photos.attach(io: file, filename: 'emily.png', content_type: 'image/png')
 
 sam = User.create!(
   name: "Sam",
   email: "sam@live.com",
   password: "password"
 )
-sam.photos.attach(io: File.open('app/assets/images/sam.png'), filename: 'sam.png', content_type: 'image/png')
+file = File.open('app/assets/images/sam.png')
+sam.photos.attach(io: file, filename: 'sam.png', content_type: 'image/png')
 
 theresa = User.create!(
   name: "Theresa",
   email: "theresa@live.com",
   password: "password"
 )
-theresa.photos.attach(io: File.open('app/assets/images/theresa.png'), filename: 'theresa.png', content_type: 'image/png')
+file = File.open('app/assets/images/theresa.png')
+theresa.photos.attach(io: file, filename: 'theresa.png', content_type: 'image/png')
 
 # puts "Creating listings..."
 
