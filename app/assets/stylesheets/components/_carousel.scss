@@ -1,5 +1,11 @@
 .carousel-img {
-  height: 200px;
   object-fit: cover;
   object-position: center;
+}
+
+.big-carousel-img {
+  object-fit: cover;
+  object-position: center;
+  height: 732px;
+  padding-left: 15px;
 }
