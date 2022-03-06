@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <div class="container">
   <div class="d-flex justify-content-center mb-3">
-    <h4 class="p-4 mt-2 mb-0"><%= @owner.name %>'s listings</h4>
+    <h4 class="p-4 mt-2 mb-0">Listings by <%= @owner.name %></h4>
   </div>
   <div class="row">
     <% @owner.listings.each do |listing| %>
