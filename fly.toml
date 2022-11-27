@@ -1,4 +1,4 @@
-# fly.toml file generated for rails-getawayz on 2022-11-26T20:27:16+11:00
+# fly.toml file generated for rails-getawayz on 2022-11-27T17:09:44+11:00
 
 app = "rails-getawayz"
 kill_signal = "SIGINT"
